@@ -121,6 +121,20 @@ console.log(`Order ID: ${orderId} | Is shipped: ${isShipped}`);
 
 console.log("=".repeat(60));
 
+//14. A client wants to generate search-friendly tags for their blog articles. They provide a string of comma-separated topics, but the format is messy. 
+
+const noCleanTags = "  javascript, WEB DEVELOPMENT, beginner guides  ";
+
+const tagList = noCleanTags.toLowerCase().trim().split(",");
+
+const secondTag = tagList[1].trim().replace(" ", "-");
+
+console.log(`Primary Tag: ${tagList[0]} | Formatted second tag: ${secondTag}`);
+
+
+
+
+
 
 
 
