@@ -123,6 +123,8 @@ console.log("=".repeat(60));
 
 //14. A client wants to generate search-friendly tags for their blog articles. They provide a string of comma-separated topics, but the format is messy. 
 
+console.log("Exercise 14:")
+
 const noCleanTags = "  javascript, WEB DEVELOPMENT, beginner guides  ";
 
 const tagList = noCleanTags.toLowerCase().trim().split(",");
@@ -130,6 +132,65 @@ const tagList = noCleanTags.toLowerCase().trim().split(",");
 const secondTag = tagList[1].trim().replace(" ", "-");
 
 console.log(`Primary Tag: ${tagList[0]} | Formatted second tag: ${secondTag}`);
+
+console.log("=".repeat(60));
+
+
+// 15. Clients building search bars often need to clean and validate user input before sending the query to their product database.
+
+console.log("Exercise 15:")
+
+const userQuery = "   FIND React Course   ";
+
+const cleanQuery = userQuery.trim().toLowerCase();
+
+const matchesTopic = cleanQuery.includes("react");
+
+const courseIndex  = cleanQuery.indexOf("course");
+
+console.log(`Normalized Query: ${cleanQuery} | Topic match: ${matchesTopic} | Keyword starts at: ${courseIndex}`);
+
+console.log("=".repeat(60));
+
+// 16. A retail client needs to extract product details from an unformatted receipt line item to prepare a summary for an email receipt.
+
+console.log("Exercise 16:")
+
+const rawReceipt = "  ITEM:Mechanical Keyboard-PRICE:$120  ";
+
+const cleanReceipt = rawReceipt.trim().split("-");
+
+const productName = cleanReceipt[0].replace("ITEM:", "");
+
+const productPrice = cleanReceipt[1].replace("PRICE:$", "");
+
+const isKeyboard = productName.includes("Keyboard");
+
+
+console.log(`Item: ${productName} | Price: $${productPrice} | Is keyboard: ${isKeyboard}`);
+
+console.log("=".repeat(60));
+
+
+
+// 17. A travel client needs to extract and format passenger details from a raw booking string to display on a digital boarding pass. 
+
+console.log("Exercise 17:")
+
+const rawFlightData = "  passenger:sarah connor_flight:AC842_status:confirmed  ";
+
+const trimmedRawFlightData = rawFlightData.trim();
+
+const arrayFlightData = trimmedRawFlightData.split("_");
+
+const passengerName = arrayFlightData[0].toUpperCase().replace("PASSENGER:", "");
+
+const isConfirmed = arrayFlightData[2].includes("confirmed");
+
+console.log(`Passenger: ${passengerName} | Confirmed: ${isConfirmed}`);
+
+console.log("=".repeat(60));
+
 
 
 
