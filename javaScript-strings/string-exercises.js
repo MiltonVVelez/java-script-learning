@@ -191,6 +191,66 @@ console.log(`Passenger: ${passengerName} | Confirmed: ${isConfirmed}`);
 
 console.log("=".repeat(60));
 
+// 18. An enterprise client receives invoice codes that combine the department, reference number, and region into a single line.
+
+console.log("Exercise 18:")
+
+const rawInvoice = "  dept:FINANCE-ref#99401-region:CAN  ";
+
+const cleanInvoice = rawInvoice.trim();
+
+const refNumber = cleanInvoice.slice(cleanInvoice.indexOf("9"), cleanInvoice.indexOf("-region"));
+
+const regionCode = (cleanInvoice.slice(cleanInvoice.indexOf("CAN"))).toLowerCase();
+
+const isFinance = cleanInvoice.includes("FINANCE");
+
+console.log(`Invoice Ref: ${refNumber} | Region: ${regionCode} | Finance Dept: ${isFinance}`);
+
+console.log("=".repeat(60));
+
+// 19. An e-commerce store wants to generate a promotional banner from a raw product tag.
+
+console.log("Exercise 19:")
+
+
+const rawPromo = "  deal:SUMMER-discount:20%OFF-category:SHOES  ";
+
+const cleanPromo = rawPromo.trim().split("-");
+
+const dealName = cleanPromo[0].replace("deal:", "");
+
+const discountValue = cleanPromo[1].replace("discount:", "").toLowerCase();
+
+const isShoesDeal = cleanPromo[2].includes("SHOES");
+
+console.log(`Deal: ${dealName} | Discount: ${discountValue} | Shoes promotion: ${isShoesDeal}`);
+
+
+console.log("=".repeat(60));
+
+// 20. For the final challenge, let's combine several techniques. A client wants to validate a user's registration email, mask the username for privacy, and extract the domain.
+
+console.log("Exercise 20:")
+
+const rawEmail = "   Customer.Service@CompanyPortal.COM   ";
+
+const normalizedEmail = rawEmail.trim().toLowerCase();
+
+const username = normalizedEmail.slice(0, normalizedEmail.indexOf("@"));
+
+const domain = normalizedEmail.slice(normalizedEmail.indexOf("@"));
+
+const maskedUser = username[0] + "*".repeat(username.length - 1);
+
+isOfficialDomain = domain.includes("companyportal.com");
+
+console.log(`Masked: ${maskedUser}${domain} | Official domain: ${isOfficialDomain}`);
+
+
+console.log("=".repeat(60));
+
+
 
 
 
