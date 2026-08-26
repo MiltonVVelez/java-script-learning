@@ -104,6 +104,25 @@ console.log(`Featured Tag: ${featuredTag} | Has Laptops tag: ${hasLaptops}` );
 
 console.log("=".repeat(60));
 
+// 13.A logistics client sends order status updates in a fixed format, but some records have accidental trailing spaces.
+
+console.log("Exercise 13:");
+
+const orderCode = "ORDER#84920-SHIPPED   ";
+
+const cleanedOrder = orderCode.trimEnd();
+
+const orderId = cleanedOrder.slice(cleanedOrder.indexOf("#")+1, cleanedOrder.indexOf("-"));
+
+const isShipped = cleanedOrder.includes("SHIPPED");
+
+console.log(`Order ID: ${orderId} | Is shipped: ${isShipped}`);
+
+
+console.log("=".repeat(60));
+
+
+
 
 
 
