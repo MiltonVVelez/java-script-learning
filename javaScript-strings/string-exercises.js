@@ -61,7 +61,7 @@ console.log("=".repeat(60));
 
 // 10. A client is building a social profile page. When a user registers with their full name, the platform automatically generates a default handle/username format.
 
-console.log("Exercise 10")
+console.log("Exercise 10:");
 
 const fullName = "  Ada Lovelace  ";
 
@@ -70,6 +70,49 @@ const fullNameFormatted = fullName.trim();
 const userHandle = "@" + fullNameFormatted.replace(" ", "_").toLowerCase();
 
 console.log(`Profile created for: ${fullNameFormatted} | Handle: ${userHandle}`);
+
+console.log("=".repeat(60));
+
+// 11. A client wants to automatically display their brand name in uppercase on their website footer, extracted from their raw domain URL.
+
+console.log("Exercise 11:");
+
+const websiteURL = "https://www.shopify.com";
+
+const startIndex = websiteURL.indexOf("www.") + 4;
+const endIndex = websiteURL.indexOf(".com");
+
+const brandName = websiteURL.slice(startIndex, endIndex).toUpperCase();
+
+console.log(`Brand: ${brandName} | Original URL: ${websiteURL}`);
+
+console.log("=".repeat(60));
+
+// 12. A client runs an online store and needs to clean up raw product tags entered by a vendor so their search filter can index them properly.
+
+console.log("Exercise 12:");
+
+const rawTags = "electronics, LAPTOPS , computers";
+
+const arrayRawTags = rawTags.toLowerCase().split(",");
+
+const featuredTag = arrayRawTags[1].trim();
+
+const hasLaptops = rawTags.toLocaleLowerCase().includes("laptops");
+
+console.log(`Featured Tag: ${featuredTag} | Has Laptops tag: ${hasLaptops}` );
+
+console.log("=".repeat(60));
+
+
+
+
+
+
+
+
+
+
 
 
 
