@@ -251,6 +251,109 @@ console.log(`Masked: ${maskedUser}${domain} | Official domain: ${isOfficialDomai
 console.log("=".repeat(60));
 
 
+// 21. A customer support system receives raw, unformatted ticket strings from automated server error alerts. The client wants to display a clean status summary on their internal dashboard.
+
+console.log("Exercise 21:");
+
+const rawTicket = "   ticket_URGENT_server-down   ";
+
+const formattedTicket = rawTicket.trim().toLowerCase().split("_");
+
+const alarmType = formattedTicket[1];
+
+const issueType = formattedTicket[2].replace("-", " ");
+
+console.log(`Status: ${alarmType} | Issue: ${issueType}`);
+
+
+console.log("=".repeat(60));
+
+// 22. A social network client needs to display user tags in a profile header. The database provides raw strings with inconsistent casing and extra spaces.
+
+console.log("Exercise 22:");
+
+const rawProfile = "   DEVELOPER_toronto_pro   ";
+
+const arrayProfile = rawProfile.trim().toLowerCase().split("_");
+
+const roleProfile = arrayProfile[0];
+
+const locationProfile = arrayProfile[1].replace(arrayProfile[1][0], arrayProfile[1][0].toUpperCase());
+
+const tierProfile = arrayProfile[2].toUpperCase();
+
+
+console.log(`Role: ${roleProfile} | Location: ${locationProfile} | Tier: ${tierProfile}`);
+
+
+console.log("=".repeat(60));
+
+// 23.  A marketing platform receives unformatted subscriber entries and needs to display a clean breakdown of user details and subscription tiers in the client's admin dashboard.
+
+console.log("Exercise 23:");
+
+const rawSubscriber = "  USER:alex.smith@email.com_PLAN:premium  ";
+
+const formattedSuscriber = rawSubscriber.trim().toLowerCase().split("_");
+
+const emailUser = formattedSuscriber[0].replace("user:", "");
+
+const user = emailUser.slice(0, emailUser.indexOf("@"));
+
+const subscriberDomain = formattedSuscriber[0].slice(formattedSuscriber[0].indexOf("@") + 1);
+
+const plan = formattedSuscriber[1].replace("plan:", "").toUpperCase();
+
+console.log(`User: ${user} | Domain: ${subscriberDomain} | Plan: ${plan}`);
+
+console.log("=".repeat(60));
+
+// 24. A logistics dashboard needs to format incoming warehouse shipping tags into clean labels for customer notifications.
+console.log("Exercise 24:");
+
+const rawShipment = "   TRACK#CA-98124_STATUS:in-transit   ";
+
+const rawShipmentFormatted = rawShipment.trim().toLowerCase().split("_");
+
+
+
+const trackingId = rawShipmentFormatted[0].slice(rawShipmentFormatted[0].indexOf("#") + 1).toUpperCase();
+
+const statusShipment = rawShipmentFormatted[1].replace("status:", "").replace("-", " ").toUpperCase();
+
+
+console.log(`Tracking: ${trackingId} | Status: ${statusShipment}`);
+
+console.log("=".repeat(60));
+
+
+// 25. A Canadian SaaS enterprise receives account provisioning records from an external partner. The client needs to generate a clean client profile summary for their billing portal.
+
+console.log("Exercise 25:");
+
+const rawAccount = "   ACC#VAN-80412_CLIENT:jordan-lee_TIER:enterprise   ";
+
+
+const rawAccountFormatted = rawAccount.trim().toLowerCase().split("_");
+
+
+const account = rawAccountFormatted[0].replace("acc#", "").toUpperCase();
+
+const clientNoCapitalized = rawAccountFormatted[1].replace("client:", "").replace("-", " ");
+
+const clientCapitalized = clientNoCapitalized.replace(clientNoCapitalized[0], clientNoCapitalized[0].toUpperCase()).replace(clientNoCapitalized[clientNoCapitalized.indexOf(" ") + 1], clientNoCapitalized[clientNoCapitalized.indexOf(" ") + 1].toUpperCase());
+
+const clientTier = rawAccountFormatted[2].replace("tier:", "").toUpperCase();
+
+
+console.log(`Account: ${account} | Client: ${clientCapitalized} | Tier: ${clientTier}` );
+
+
+
+
+
+
+
 
 
 
