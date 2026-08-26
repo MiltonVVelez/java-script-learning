@@ -50,13 +50,27 @@ const uploadedFileName = " profile-picture.PNG ";
 
 const cleanFileName = uploadedFileName.trim().toLowerCase();
 
-isValidFormat = cleanFileName.includes(".png");
+const isValidFormat = cleanFileName.includes(".png");
 
 extensionIndex = cleanFileName.indexOf(".png");
 
 console.log(`File: ${cleanFileName} | Valid PNG: ${isValidFormat} | Extension starts at index: ${extensionIndex}`);
 
 console.log("=".repeat(60));
+
+
+// 10. A client is building a social profile page. When a user registers with their full name, the platform automatically generates a default handle/username format.
+
+console.log("Exercise 10")
+
+const fullName = "  Ada Lovelace  ";
+
+const fullNameFormatted = fullName.trim();
+
+const userHandle = "@" + fullNameFormatted.replace(" ", "_").toLowerCase();
+
+console.log(`Profile created for: ${fullNameFormatted} | Handle: ${userHandle}`);
+
 
 
 
